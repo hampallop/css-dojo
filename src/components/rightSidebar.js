@@ -1,11 +1,11 @@
-import React from "react";
-import { StaticQuery, graphql } from "gatsby";
-import styled from "react-emotion";
-import Link from "./link";
-import './styles.css';
-import config from '../../config';
+import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import styled from 'react-emotion'
+import Link from './link'
+import './styles.css'
+import config from '../../config'
 
-const forcedNavOrder = config.sidebar.forcedNavOrder;
+const forcedNavOrder = config.sidebar.forcedNavOrder
 
 const Sidebar = styled('aside')`
   width: 100%;
@@ -23,20 +23,20 @@ const Sidebar = styled('aside')`
     width: 100%;
     position: relative;
   }
-`;
+`
 
 // eslint-disable-next-line no-unused-vars
 const ListItem = styled(({ className, active, level, ...props }) => {
-    return (
-      <li className={className}>
-        <a href={props.to} {...props} />
-      </li>
-    );
+  return (
+    <li className={className}>
+      <a href={props.to} {...props} />
+    </li>
+  )
 })`
   list-style: none;
 
   a {
-    color: #5C6975;
+    color: #5c6975;
     text-decoration: none;
     font-weight: ${({ level }) => (level === 0 ? 700 : 400)};
     padding: 0.45rem 0 0.45rem ${props => 2 + (props.level || 0) * 1}rem;
@@ -61,7 +61,7 @@ const ListItem = styled(({ className, active, level, ...props }) => {
       margin-right: 1rem;
     }
   }
-`;
+`
 
 const SidebarLayout = ({ location }) => (
   <StaticQuery
@@ -80,32 +80,38 @@ const SidebarLayout = ({ location }) => (
       }
     `}
     render={({ allMdx }) => {
-      let navItems = [];
-      let finalNavItems;
+      let navItems = []
+      let finalNavItems
       if (allMdx.edges !== undefined && allMdx.edges.length > 0) {
         const navItems = allMdx.edges.map((item, index) => {
-          let innerItems;
-          if(item !== undefined) {
-            if ((item.node.fields.slug === location.pathname) || (config.gatsby.pathPrefix + item.node.fields.slug) === location.pathname) {
+          let innerItems
+          if (item !== undefined) {
+            if (
+              item.node.fields.slug === location.pathname ||
+              config.gatsby.pathPrefix + item.node.fields.slug ===
+                location.pathname
+            ) {
               if (item.node.tableOfContents.items) {
-                innerItems = item.node.tableOfContents.items.map((innerItem, index) => {
-                  return (
-                    <ListItem
-                      key={index}
-                      to={`#${innerItem.title}`}
-                      level={1}
-                    >
-                      {innerItem.title}
-                    </ListItem>
-                  );
-                });
+                innerItems = item.node.tableOfContents.items.map(
+                  (innerItem, index) => {
+                    return (
+                      <ListItem
+                        key={index}
+                        to={`#${innerItem.title}`}
+                        level={1}
+                      >
+                        {innerItem.title}
+                      </ListItem>
+                    )
+                  }
+                )
               }
             }
           }
           if (innerItems) {
-            finalNavItems = innerItems;
+            finalNavItems = innerItems
           }
-        });
+        })
       }
 
       if (finalNavItems && finalNavItems.length) {
@@ -116,16 +122,16 @@ const SidebarLayout = ({ location }) => (
               {finalNavItems}
             </ul>
           </Sidebar>
-        );
+        )
       } else {
         return (
           <Sidebar>
             <ul></ul>
           </Sidebar>
-        );
+        )
       }
     }}
   />
-);
+)
 
-export default SidebarLayout;
+export default SidebarLayout
