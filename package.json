@@ -40,17 +40,26 @@
     "react-github-btn": "^1.0.5",
     "react-helmet": "^5.2.0",
     "react-live": "^2.0.1",
+    "sanitize.css": "^10.0.0",
     "system-components": "^3.0.3"
   },
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "start": "gatsby develop",
+    "dev": "gatsby develop",
     "build": "gatsby build --prefix-paths",
     "format": "prettier-eslint \"src/**/*.js\" \"content/*\" --write"
   },
   "devDependencies": {
+    "eslint": "^6.0.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-react": "^7.14.0",
+    "eslint-plugin-standard": "^4.0.0",
     "gatsby-plugin-remove-trailing-slashes": "^2.0.11",
+    "import-all.macro": "^2.0.3",
     "prettier-eslint-cli": "^5.0.0",
     "prism-react-renderer": "^0.1.6"
   }
