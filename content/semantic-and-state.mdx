@@ -1,0 +1,58 @@
+---
+title: 'Semantic and state'
+metaTitle: 'This is the title tag of this page'
+metaDescription: 'This is the meta description'
+---
+
+## CSS selector for state controller
+
+| selector      | description    | use cases        |
+| :------------ | :------------- | :--------------- |
+| :hover        | on hover       | button, input, a |
+| :focus        | on focus       | button, input, a |
+| :active       | on press       | button, input, a |
+| :disbled      | disabled state | button, input    |
+| :invalid      | invalid state  | input            |
+| :optional     | optional input | input            |
+| :required     | required input | input            |
+| :visited      | visited link   | a                |
+| ::placeholder | placeholder    | input            |
+
+---
+
+### Button
+
+<Card>
+  <Button mr={20} />
+  <Button disabled />
+</Card>
+
+---
+
+## Detailed design, Hand-over to developers
+
+every screen have at least 6 different states
+
+### Empty state
+
+What we see when we use the product for the first time and there's no data in it. You can scroll back to the on-boarding section for the tips and tricks about the empty states.
+
+### Loading state
+
+We don't like to wait, but it's still better to get some feedback about what's going on. Loading indicators and progress bars are used to rule this state. Nowadays skeleton screens are more popular (with a reason). We shoe the shape and structure of the content, like grey boxes with a hint of animation representing the loading.
+
+### Ideal state
+
+This is what we like to design for. This is the state where everything looks the best, with just the right amount of data.
+
+### Partial state
+
+What does it look like when there is just little data? When half of the form is empty. And what does it look like when we have outlier data? Like a very long Spanish name on the profile page.
+
+### Interaction state
+
+Today's apps are full of micro-interactions that happen on the same page. Modals. switches and form elements, state indicators, panels, menus, messages, etc. We have to design the different states of these, too.
+
+### Error state
+
+When something goes wrong people tend to panic or become nervous. So we have to design the error states carefully. It has to show where the error is (a small red box on the top is not enough), clearly tell what the problem is in plain English, and tell the users what to do exactly to solve it.
