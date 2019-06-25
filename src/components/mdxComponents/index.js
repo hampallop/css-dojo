@@ -7,6 +7,10 @@ import Pre from './pre'
 import AnchorTag from './anchor'
 import Button from './components/button'
 import Card from './components/card'
+import Box from './components/box'
+import {LayoutBox, BoxTemplate, BoxAutoWideTemplate} from './components/layout-box'
+import {Stack, SimpleStack, WrapableStack, GridStack} from './components/stack'
+
 import importAll from 'import-all.macro'
 
 const Components = importAll.sync('./components/*.js')
@@ -55,6 +59,14 @@ export default {
   a: props => <AnchorTag {...props} />,
   Button,
   Card,
+  Box,
+  LayoutBox,
+  BoxTemplate,
+  BoxAutoWideTemplate,
+  Stack,
+  SimpleStack,
+  WrapableStack,
+  GridStack,
   // ...mapKeys(getOnlyFilename)(Components),
   // TODO add `img`
   // TODO add `blockquote`

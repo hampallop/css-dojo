@@ -1,7 +1,7 @@
 import { css } from 'react-emotion'
 
 const isNumber = x => typeof x === 'number'
-const parseUnit = margin => (isNumber(margin) ? `${margin}px` : margin)
+export const parseUnit = margin => (isNumber(margin) ? `${margin}px` : margin)
 
 export const dynamicMargin = ({ mt = 0, mr = 0, mb = 0, ml = 0 }) => css`
   margin-top: ${parseUnit(mt)};

@@ -13,7 +13,7 @@ const config = {
     links: [{ text: '', link: '' }],
   },
   sidebar: {
-    forcedNavOrder: ['/introduction', '/codeblock'],
+    forcedNavOrder: ['/codeblock'],
     links: [{ text: '', link: '' }],
   },
   siteMetadata: {

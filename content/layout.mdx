@@ -1,0 +1,205 @@
+---
+title: 'Layout'
+metaTitle: 'This is the title tag of this page'
+metaDescription: 'This is the meta description'
+---
+
+# Magic of width
+
+## `width` vs `max-width`
+
+<Card>
+  <LayoutBox style="width: 700px; margin-bottom: 1rem;">
+    I have a fixed <b>width = 700px</b>
+  </LayoutBox>
+  <LayoutBox style="max-width: 700px;">
+    I have a <b>max-width = 700px</b>
+  </LayoutBox>
+</Card>
+
+> Most of the time to build responsive component, using `max-width` rather than `width`
+
+# Magic of margin
+
+## margin auto
+
+Margin can be set to `auto`
+
+```
+margin: auto;
+```
+
+## margin minus
+
+Margin can be set to `minus`
+
+```
+margin: -20px;
+```
+
+# Responsive layout
+
+The simplest way to make responsive layout is using `max-width` and `margin auto`
+
+<Card>
+  <LayoutBox style="max-width: 500px; margin: 0 auto;">
+    I want my main container to have a <b>width = 500px</b>
+  </LayoutBox>
+</Card>
+
+```css
+max-width: 500px;
+margin: 0 auto;
+```
+
+# Stack
+
+## Prerequisite
+
+- Flexbox knowledge – you can learn it from [flex cheatsheet](https://yoksel.github.io/flex-cheatsheet/)
+
+## Example
+
+I have a box that contains width,height = 150px
+
+```css
+width: 150px;
+height: 150px;
+background: #999;
+```
+
+<Card>
+  <BoxTemplate />
+</Card>
+
+## Simple stack by Flex
+
+```css
+display: flex;
+> * {
+  margin: 0;
+
+  + * {
+    margin-left: 16px;
+  }
+}
+```
+
+<Card>
+  <div style="border: 2px dashed #999;">
+    <SimpleStack>
+      <BoxTemplate />
+      <BoxTemplate />
+      <BoxTemplate />
+      <BoxTemplate />
+    </SimpleStack>
+  </div>
+</Card>
+
+## Wrapable stack
+
+```css
+display: flex;
+flex-wrap: wrap;
+> * {
+  margin: 0;
+
+  + * {
+    margin-left: 16px;
+  }
+}
+```
+
+<Card>
+  <div style="border: 2px dashed #999;">
+    <WrapableStack>
+      <BoxTemplate />
+      <BoxTemplate />
+      <BoxTemplate />
+      <BoxTemplate />
+    </WrapableStack>
+  </div>
+</Card>
+
+## Flexible stack
+
+```css
+display: flex;
+flex-wrap: wrap;
+margin-left: -16px;
+margin-top: -16px;
+
+> * {
+  margin-left: 16px;
+  margin-top: 16px;
+}
+```
+
+<Card>
+  <div style="border: 2px dashed #999;">
+    <Stack>
+      <BoxTemplate />
+      <BoxTemplate />
+      <BoxTemplate />
+      <BoxTemplate />
+    </Stack>
+  </div>
+</Card>
+
+### Problem
+
+This flex stack will works fine as long as child component have a **fixed size**.
+
+What if the Box has size that can grown?
+
+```
+- width: 150px;
++ min-width: 150px;
++ width: 100%;
+height: 150px;
+background: #999;
+border-radius: 0.25rem;
+```
+
+### Result
+
+<Card>
+  <div style="border: 2px dashed #999;">
+    <Stack>
+      <BoxAutoWideTemplate />
+      <BoxAutoWideTemplate />
+      <BoxAutoWideTemplate />
+      <BoxAutoWideTemplate />
+    </Stack>
+  </div>
+</Card>
+
+### What happened?
+
+Because the stack that we built from the flex, it doesn’t care to make child component display in a row.
+
+<details>
+  <summary>Solution</summary>
+  Using Grid layout!
+</details>
+
+## Flexible stack (grid version)
+
+Grid make things like easier?
+
+```css
+display: grid;
+grid-gap: 16px;
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+```
+
+<Card>
+  <div style="border: 2px dashed #999;">
+    <GridStack>
+      <BoxAutoWideTemplate />
+      <BoxAutoWideTemplate />
+      <BoxAutoWideTemplate />
+      <BoxAutoWideTemplate />
+    </GridStack>
+  </div>
+</Card>
