@@ -1,13 +1,13 @@
 const config = {
   gatsby: {
     pathPrefix: '/',
-    siteUrl: 'https://learn.hasura.io',
+    siteUrl: 'https://css-dojo.netlify.com',
     gaTrackingId: null,
   },
   header: {
     logo: 'https://graphql-engine-cdn.hasura.io/img/hasura_icon_white.svg',
-    title: 'Gatsby Gitbook Boilerplate',
-    githubUrl: 'https://github.com/hasura/gatsby-gitbook-boilerplate',
+    title: 'CSS Dojo',
+    githubUrl: 'https://github.com/hamcompe/css-dojo',
     helpUrl: '',
     tweetText: '',
     links: [{ text: '', link: '' }],
@@ -17,11 +17,11 @@ const config = {
     links: [{ text: '', link: '' }],
   },
   siteMetadata: {
-    title: 'Gatsby Gitbook Boilerplate | Hasura',
-    description: 'Documentation built with mdx. Powering learn.hasura.io ',
+    title: 'CSS Dojo',
+    description: 'CSS Dojo — your best friend cheatsheet',
     ogImage: null,
     docsLocation:
-      'https://github.com/hasura/gatsby-gitbook-boilerplate/tree/master/content',
+      'https://github.com/hamcompe/css-dojo/tree/master/content',
     favicon: 'https://graphql-engine-cdn.hasura.io/img/hasura_icon_black.svg',
   },
 }
