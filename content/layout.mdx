@@ -52,6 +52,52 @@ max-width: 500px;
 margin: 0 auto;
 ```
 
+## Padding
+
+To make sure that in mobile your user gonna see a nice padding you should put side padding for your main container layout.
+
+### First solution: adding padding into container
+
+Adding padding
+
+```css
+max-width: 500px;
+margin: 0 auto;
+padding: 0 20px;
+```
+
+but if you just adding padding here, your container will no longer have a 500px wide size, to prevent that you should also put `box-sizing: content-box`
+
+```css
+max-width: 500px;
+margin: 0 auto;
+padding: 0 20px;
+box-sizing: content-box;
+```
+
+then you’ll get a nicely container that contains have an actual 500px sizing wide in desktop and display nicely in mobile with 20px padding.
+
+### Second solution: Using 2 wrappers
+
+```
+<div class="container">
+  <div class="content-container">
+    put code here
+  </div>
+</div>
+
+<style>
+  .content-container {
+    max-width: 500px;
+    margin: 0 -20px;
+    padding: 0 20px;
+  }
+  .container {
+    margin: 0 auto;
+  }
+</style>
+```
+
 # Stack
 
 ## Prerequisite
