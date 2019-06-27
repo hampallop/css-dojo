@@ -10,6 +10,7 @@ import Card from './components/card'
 import Box from './components/box'
 import {LayoutBox, BoxTemplate, BoxAutoWideTemplate} from './components/layout-box'
 import {Stack, SimpleStack, WrapableStack, GridStack} from './components/stack'
+import {Images, CoverImage} from './components/images'
 
 import importAll from 'import-all.macro'
 
@@ -67,6 +68,8 @@ export default {
   SimpleStack,
   WrapableStack,
   GridStack,
+  Images,
+  CoverImage,
   // ...mapKeys(getOnlyFilename)(Components),
   // TODO add `img`
   // TODO add `blockquote`

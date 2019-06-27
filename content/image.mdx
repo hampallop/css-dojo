@@ -1,0 +1,48 @@
+---
+title: 'Images'
+metaTitle: 'This is the title tag of this page'
+metaDescription: 'This is the meta description'
+---
+
+# Serving the right size of images
+
+To serve a best user experience for the user, performance is doing a big role for that. We can simply using [img attribute sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) to help, so we can make sure user will only load an appropriate image size.
+
+> The [sizes](https://cloudfour.com/thinks/responsive-images-101-part-5-sizes/) attribute in the HTML code should be adjusted to fit the actual dimensions in your page
+
+## Using img sizes attribute
+
+```html
+<img
+  sizes="(max-width: 1380px) 100vw, 1380px"
+  srcset="
+    dog_c_scale,w_400.jpg   400w,
+    dog_c_scale,w_832.jpg   832w,
+    dog_c_scale,w_1146.jpg 1146w,
+    dog_c_scale,w_1380.jpg 1380w
+  "
+  src="dog_c_scale,w_1380.jpg"
+  alt=""
+/>
+```
+
+<Card>
+  <Images />
+</Card>
+
+_Looking into the your network, it’ll serve different images in different viewports._
+
+## Pro tips:
+
+Using [responsivebreakpoint site](https://www.responsivebreakpoints.com/) to help generate multiple responsive images
+
+# Perfect background cover image
+
+For more information about → [background shorthand](https://www.w3schools.com/cssref/css3_pr_background.asp)
+
+```css
+background: url('/bg-image.png') center center / cover no-repeat scroll;
+min-height: 200px;
+```
+
+<CoverImage />
