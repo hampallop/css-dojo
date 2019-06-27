@@ -112,19 +112,30 @@ then you’ll get a nicely container that contains have an actual 500px sizing w
 
 I have a box that contains width,height = 150px
 
+<Card>
+  <BoxTemplate />
+</Card>
+
 ```css
 width: 150px;
 height: 150px;
 background: #999;
 ```
 
-<Card>
-  <BoxTemplate />
-</Card>
-
 ## Simple stack by Flex
 
-```css
+<Card>
+  <div style="border: 2px dashed #999;">
+    <SimpleStack>
+      <BoxTemplate>1</BoxTemplate>
+      <BoxTemplate>2</BoxTemplate>
+      <BoxTemplate>3</BoxTemplate>
+      <BoxTemplate>4</BoxTemplate>
+    </SimpleStack>
+  </div>
+</Card>
+
+```scss
 display: flex;
 > * {
   margin: 0;
@@ -135,20 +146,20 @@ display: flex;
 }
 ```
 
+## Wrapable stack
+
 <Card>
   <div style="border: 2px dashed #999;">
-    <SimpleStack>
-      <BoxTemplate />
-      <BoxTemplate />
-      <BoxTemplate />
-      <BoxTemplate />
-    </SimpleStack>
+    <WrapableStack>
+      <BoxTemplate>1</BoxTemplate>
+      <BoxTemplate>2</BoxTemplate>
+      <BoxTemplate>3</BoxTemplate>
+      <BoxTemplate>4</BoxTemplate>
+    </WrapableStack>
   </div>
 </Card>
 
-## Wrapable stack
-
-```css
+```scss
 display: flex;
 flex-wrap: wrap;
 > * {
@@ -160,20 +171,20 @@ flex-wrap: wrap;
 }
 ```
 
+## Flexible stack
+
 <Card>
   <div style="border: 2px dashed #999;">
-    <WrapableStack>
-      <BoxTemplate />
-      <BoxTemplate />
-      <BoxTemplate />
-      <BoxTemplate />
-    </WrapableStack>
+    <Stack>
+      <BoxTemplate>1</BoxTemplate>
+      <BoxTemplate>2</BoxTemplate>
+      <BoxTemplate>3</BoxTemplate>
+      <BoxTemplate>4</BoxTemplate>
+    </Stack>
   </div>
 </Card>
 
-## Flexible stack
-
-```css
+```scss
 display: flex;
 flex-wrap: wrap;
 margin-left: -16px;
@@ -184,17 +195,6 @@ margin-top: -16px;
   margin-top: 16px;
 }
 ```
-
-<Card>
-  <div style="border: 2px dashed #999;">
-    <Stack>
-      <BoxTemplate />
-      <BoxTemplate />
-      <BoxTemplate />
-      <BoxTemplate />
-    </Stack>
-  </div>
-</Card>
 
 ### Problem
 
@@ -216,10 +216,10 @@ border-radius: 0.25rem;
 <Card>
   <div style="border: 2px dashed #999;">
     <Stack>
-      <BoxAutoWideTemplate />
-      <BoxAutoWideTemplate />
-      <BoxAutoWideTemplate />
-      <BoxAutoWideTemplate />
+      <BoxAutoWideTemplate>1</BoxAutoWideTemplate>
+      <BoxAutoWideTemplate>2</BoxAutoWideTemplate>
+      <BoxAutoWideTemplate>3</BoxAutoWideTemplate>
+      <BoxAutoWideTemplate>4</BoxAutoWideTemplate>
     </Stack>
   </div>
 </Card>
@@ -237,19 +237,19 @@ Because the stack that we built from the flex, it doesn’t care to make child c
 
 Grid make things like easier?
 
+<Card>
+  <div style="border: 2px dashed #999;">
+    <GridStack>
+      <BoxAutoWideTemplate>1</BoxAutoWideTemplate>
+      <BoxAutoWideTemplate>2</BoxAutoWideTemplate>
+      <BoxAutoWideTemplate>3</BoxAutoWideTemplate>
+      <BoxAutoWideTemplate>4</BoxAutoWideTemplate>
+    </GridStack>
+  </div>
+</Card>
+
 ```css
 display: grid;
 grid-gap: 16px;
 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 ```
-
-<Card>
-  <div style="border: 2px dashed #999;">
-    <GridStack>
-      <BoxAutoWideTemplate />
-      <BoxAutoWideTemplate />
-      <BoxAutoWideTemplate />
-      <BoxAutoWideTemplate />
-    </GridStack>
-  </div>
-</Card>

@@ -31,6 +31,14 @@ metaDescription: 'This is the meta description'
 
 ### Input
 
+<Card>
+  <Stack>
+    <Input placeholder="search" />
+    <br />
+    <Input placeholder="require banana" required pattern="banana" />
+  </Stack>
+</Card>
+
 ```scss
 padding: 0.5em 1em;
 border-radius: 0.25em;
@@ -63,14 +71,6 @@ outline: none;
 }
 ```
 
-<Card>
-  <Stack>
-    <Input placeholder="search" />
-    <br />
-    <Input placeholder="require banana" required pattern="banana" />
-  </Stack>
-</Card>
-
 ---
 
 # Design Principle
@@ -102,3 +102,7 @@ Today's apps are full of micro-interactions that happen on the same page. Modals
 ### Error state
 
 When something goes wrong people tend to panic or become nervous. So we have to design the error states carefully. It has to show where the error is (a small red box on the top is not enough), clearly tell what the problem is in plain English, and tell the users what to do exactly to solve it.
+
+```
+
+```

@@ -12,6 +12,10 @@ To serve a best user experience for the user, performance is doing a big role fo
 
 ## Using img sizes attribute
 
+<Card>
+  <Images />
+</Card>
+
 ```html
 <img
   sizes="(max-width: 1380px) 100vw, 1380px"
@@ -26,10 +30,6 @@ To serve a best user experience for the user, performance is doing a big role fo
 />
 ```
 
-<Card>
-  <Images />
-</Card>
-
 _Looking into the your network, it’ll serve different images in different viewports._
 
 ## Pro tips:
@@ -40,9 +40,9 @@ Using [responsivebreakpoint site](https://www.responsivebreakpoints.com/) to hel
 
 For more information about → [background shorthand](https://www.w3schools.com/cssref/css3_pr_background.asp)
 
+<CoverImage />
+
 ```css
 background: url('/bg-image.png') center center / cover no-repeat scroll;
 min-height: 200px;
 ```
-
-<CoverImage />

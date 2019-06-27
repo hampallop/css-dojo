@@ -7,7 +7,6 @@ import Pre from './pre'
 import AnchorTag from './anchor'
 import Button from './components/button'
 import Card from './components/card'
-import Box from './components/box'
 import {LayoutBox, BoxTemplate, BoxAutoWideTemplate} from './components/layout-box'
 import {Stack, SimpleStack, WrapableStack, GridStack} from './components/stack'
 import {Images, CoverImage} from './components/images'
@@ -61,7 +60,6 @@ export default {
   a: props => <AnchorTag {...props} />,
   Button,
   Card,
-  Box,
   LayoutBox,
   BoxTemplate,
   BoxAutoWideTemplate,
