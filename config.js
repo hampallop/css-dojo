@@ -13,7 +13,7 @@ const config = {
     links: [{ text: '', link: '' }],
   },
   sidebar: {
-    forcedNavOrder: ['/css-selector', '/state-of-component', '/images', '/layout'],
+    forcedNavOrder: ['/css-selector', '/state-of-component', '/images', '/layout', '/typography'],
     links: [{ text: '', link: '' }],
   },
   siteMetadata: {

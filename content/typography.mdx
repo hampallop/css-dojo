@@ -1,0 +1,57 @@
+---
+title: 'Typography'
+metaTitle: 'This is the title tag of this page'
+metaDescription: 'This is the meta description'
+---
+
+## Figure style
+
+When you need the numbers to be align.
+
+<Card>
+  <Stack gap={30}>
+    <div>
+      <p style="margin: 0;">$300</p>
+      <p style="margin: 0;">$110</p>
+      <small>Proportional</small>
+    </div>
+    <div style="font-variant-numeric: tabular-nums; font-feature-settings: 'tnum';">
+      <p style="margin: 0;">$300</p>
+      <p style="margin: 0;">$110</p>
+      <small>Tabular</small>
+    </div>
+  </Stack>
+</Card>
+
+```css
+font-variant-numeric: tabular-nums;
+font-feature-settings: "tnum';
+```
+
+## Punctuation
+
+| name    | symbol | command            |
+| :------ | :----- | :----------------- |
+| Hyphen  | -      | `-`                |
+| En Dash | –      | option + `-`       |
+| Em Dash | —      | cmd + option + `-` |
+
+#### When to use ?
+
+- **Hyphen**: It’s primarily used for hyphenating words, hence the name, and for connecting two or more words together: five-dollar bills. |
+- **En Dash**: Its main purpose is to replace the word “to”, like 6–5 p.m. |
+- **Em Dash**: The em dash can be used as an indicator of speaker in a narrative. —“Why is typography important?”. It can also be used as an indicator of a break. |
+
+### Quotation Marks
+
+Make sure you use the correct curly quotation marks. Straight marks are for coding only.
+
+<p style="font-size: 2rem; font-weight: 500; margin: 0; font-family: 'times new roman'">"Don't do this."</p>
+<p style="font-size: 2rem; font-weight: 500; margin: 0; font-family: 'times new roman'">“You’re cool!”</p>
+
+| symbol | command            |
+| :----- | :----------------- |
+| ‘      | option + ]         |
+| ’      | option + shift + ] |
+| “      | option + [         |
+| ”      | option + shift + [ |
