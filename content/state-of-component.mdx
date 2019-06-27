@@ -1,16 +1,16 @@
 ---
-title: 'Semantic and state'
+title: 'State of component'
 metaTitle: 'This is the title tag of this page'
 metaDescription: 'This is the meta description'
 ---
 
-## CSS selector for state controller
+# CSS selector for state controller
 
-| selector      | description    | use cases        |
+| selector      | description    | often use cases  |
 | :------------ | :------------- | :--------------- |
 | :hover        | on hover       | button, input, a |
 | :focus        | on focus       | button, input, a |
-| :active       | on press       | button, input, a |
+| :active       | on press       | button, a        |
 | :disbled      | disabled state | button, input    |
 | :invalid      | invalid state  | input            |
 | :optional     | optional input | input            |
@@ -20,6 +20,8 @@ metaDescription: 'This is the meta description'
 
 ---
 
+## Example state of the components
+
 ### Button
 
 <Card>
@@ -27,7 +29,51 @@ metaDescription: 'This is the meta description'
   <Button disabled />
 </Card>
 
+### Input
+
+```scss
+padding: 0.5em 1em;
+border-radius: 0.25em;
+transition: border-color 0.3s ease;
+border: 1px solid rgba(0, 0, 0, 0.1);
+outline: none;
+
+:valid {
+  :hover {
+    border-color: rgba(0, 0, 0, 0.3);
+  }
+  :focus {
+    border-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+:invalid {
+  border-color: rgba(255, 0, 0, 0.9);
+
+  :hover {
+    border-color: rgba(255, 0, 0, 0.5);
+  }
+  :focus {
+    border-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+::placeholder {
+  color: #999;
+}
+```
+
+<Card>
+  <Stack>
+    <Input placeholder="search" />
+    <br />
+    <Input placeholder="require banana" required pattern="banana" />
+  </Stack>
+</Card>
+
 ---
+
+# Design Principle
 
 ## Detailed design, Hand-over to developers
 

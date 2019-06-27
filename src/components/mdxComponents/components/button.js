@@ -1,12 +1,17 @@
 import styled, { css } from 'react-emotion'
+import { lighten } from 'polished'
 import { dynamicMargin } from './styles'
+
+const baseColor = '#005aff'
 
 const buttonStyle = ({ color }) => css`
   padding: 0.6em 1em;
   border-radius: 0.25em;
   transition: all .3s ease;
-  background-color: #ff69b4;
-  border: 1px solid #ff69b4;
+  font-weight: 500;
+  color: #fff;
+  background-color: ${baseColor};
+  border: 1px solid ${baseColor};
   min-width: 8.75rem;
 
   ::after {
@@ -29,8 +34,7 @@ const buttonStyle = ({ color }) => css`
         content: 'focus & active';
       }
 
-      background-color: #dc4b93;
-      border-color: #dc4b93;
+      transform: scale(0.98);
     }
 
     :hover {
@@ -38,8 +42,8 @@ const buttonStyle = ({ color }) => css`
         content: 'hover';
       }
 
-      background-color: #ff82c0;
-      border-color: #ff82c0;
+      background-color: ${lighten(0.1, baseColor)};
+      border-color: ${lighten(0.1, baseColor)};
     }
   }
 `

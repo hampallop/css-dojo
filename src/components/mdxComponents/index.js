@@ -11,6 +11,7 @@ import Box from './components/box'
 import {LayoutBox, BoxTemplate, BoxAutoWideTemplate} from './components/layout-box'
 import {Stack, SimpleStack, WrapableStack, GridStack} from './components/stack'
 import {Images, CoverImage} from './components/images'
+import {Input} from './components/input'
 
 import importAll from 'import-all.macro'
 
@@ -70,6 +71,7 @@ export default {
   GridStack,
   Images,
   CoverImage,
+  Input,
   // ...mapKeys(getOnlyFilename)(Components),
   // TODO add `img`
   // TODO add `blockquote`
