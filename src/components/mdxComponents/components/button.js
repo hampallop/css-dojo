@@ -4,14 +4,14 @@ import { dynamicMargin } from './styles'
 
 const baseColor = '#005aff'
 
-const buttonStyle = ({ color }) => css`
+const buttonStyle = ({ color = baseColor }) => css`
   padding: 0.6em 1em;
   border-radius: 0.25em;
   transition: all .3s ease;
   font-weight: 500;
   color: #fff;
-  background-color: ${baseColor};
-  border: 1px solid ${baseColor};
+  background-color: ${color};
+  border: 1px solid ${color};
   min-width: 8.75rem;
 
   ::after {
@@ -42,8 +42,8 @@ const buttonStyle = ({ color }) => css`
         content: 'hover';
       }
 
-      background-color: ${lighten(0.1, baseColor)};
-      border-color: ${lighten(0.1, baseColor)};
+      background-color: ${lighten(0.1, color)};
+      border-color: ${lighten(0.1, color)};
     }
   }
 `
